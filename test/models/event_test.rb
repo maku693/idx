@@ -12,7 +12,7 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "should not save the event without body" do
-    event = Event.new(title: 'string', password: 'String')
+    event = Event.new(title: 'String', password: 'String')
     assert_not event.save, 'Saved the event without the body'
   end
 
