@@ -9,3 +9,27 @@
   <strong>Body:</strong>
   <%= @event.body %>
 </p>
+
+<ul>
+  <% @event.participants.each do |participant| %>
+    <li>
+      <p>
+        <%= participant.name %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_with(model: [@event, @participant], local: true) do |form| %>
+  <p>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </p>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :participant_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

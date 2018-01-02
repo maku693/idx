@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   # GET /events/1
   def show
-    @event = Event.find(params[:id])
+    @event = Event.includes(:participants).find(params[:id])
+    @participant = Participant.new
   end
 
   # POST /events
