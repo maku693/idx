@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+snake:
+  name: Snake
+  event: one
+
+otacon:
+  name: Otacon
+  event: one
+
+bigboss:
+  name: Big Boss
+  event: two
+
+kaz:
+  name: Kaz
+  event: two

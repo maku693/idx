@@ -20,4 +20,9 @@ class EventTest < ActiveSupport::TestCase
     event = Event.new(title: 'String', body: 'Text')
     assert_not event.save, 'Saved the event without the password'
   end
+
+  test "should create participant" do
+    event = events(:one)
+    assert event.participants.create(name: 'Liquid'), 'Failed to save the participant'
+  end
 end
