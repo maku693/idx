@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class EventTest < ActiveSupport::TestCase
+  test "should save with full information" do
+    event = Event.new(body: 'Text', title: 'String', password: 'String')
+    assert event.save, 'Failed to save the event'
+  end
+
   test "should not save the event without title" do
     event = Event.new(body: 'Text', password: 'String')
     assert_not event.save, 'Saved the event without the title'
