@@ -10,6 +10,11 @@
   <% end %>
 
   <p>
+    <%= form.label :slug %>
+    <%= form.text_area :slug, id: :event_slug %>
+  </p>
+
+  <p>
     <%= form.label :title %>
     <%= form.text_field :title, id: :event_title %>
   </p>
