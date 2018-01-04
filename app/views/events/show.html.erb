@@ -22,10 +22,6 @@
 
 <%= form_with(model: [@event, @participant], local: true) do |form| %>
   <p>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </p>
-  <p>
     <%= form.label :name %>
     <%= form.text_field :name, id: :participant_name %>
   </p>

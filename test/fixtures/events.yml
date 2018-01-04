@@ -3,9 +3,7 @@
 one:
   title: MyString
   body: MyText
-  password_digest: <%= BCrypt::Password.create('password') %>
 
 two:
   title: MyString
   body: MyText
-  password_digest: <%= BCrypt::Password.create('password') %>

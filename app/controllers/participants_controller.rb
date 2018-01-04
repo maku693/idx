@@ -1,6 +1,5 @@
 class ParticipantsController < ApplicationController
   before_action :set_event
-  before_action :authenticate
 
   # POST /events/1/participant
   def create
@@ -14,10 +13,6 @@ class ParticipantsController < ApplicationController
   private
     def set_event
       @event = Event.find(params[:event_id])
-    end
-
-    def authenticate
-      render 'events/show' unless @event.authenticate(params[:password])
     end
 
     def participant_params

@@ -5,7 +5,7 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
     event = events(:one)
 
     assert_difference 'Participant.count' do
-      post event_participants_path(event), params: { password: 'password', participant: { name: 'Gray Fox' } }
+      post event_participants_path(event), params: { participant: { name: 'Gray Fox' } }
     end
 
     assert_redirected_to event_url(event)
