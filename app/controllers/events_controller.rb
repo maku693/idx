@@ -1,41 +1,35 @@
 class EventsController < ApplicationController
-  # GET /events/1
+  expose :event, find_by: :slug, id: :slug
+  expose :event_with_participants, -> { Event.includes(:participants).find_by_slug!(params[:slug]) }
+  expose :participant
+
+  # GET /events/one
   def show
-    @event = Event.includes(:participants).find_by_slug!(params[:slug])
-    @participant = Participant.new
   end
 
   # POST /events
   def create
-    @event = Event.new(event_params)
-    if @event.save
-      redirect_to @event, notice: "Event was successfully created"
+    if event.save
+      redirect_to event, notice: "Event was successfully created"
     else
       render :new
     end
   end
 
-  # GET /events/1/edit
+  # GET /events/one/edit
   def edit
-    @event = find_event
   end
 
-  # GET /events/1/edit
+  # GET /events/one/edit
   def update
-    @event = find_event
-    if @event.update(event_params)
-      redirect_to @event, notice: "Event was successfully updated"
+    if event.update(event_params)
+      redirect_to event, notice: "Event was successfully updated"
     else
       render :edit
     end
   end
 
   private
-    def find_event
-      Event.find_by_slug!(params[:slug])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:slug, :title, :body)
     end

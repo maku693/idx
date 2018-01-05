@@ -2,27 +2,27 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @event.title %>
+  <%= event.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @event.body %>
+  <%= event.body %>
 </p>
 
 <p>
-  <%= link_to :edit, edit_event_path(@event) %>
+  <%= link_to :edit, edit_event_path(event) %>
 </p>
 
 <ul>
-  <% @event.participants.each do |participant| %>
+  <% event.participants.each do |participant| %>
     <li>
-      <%= participant.name %> <%= link_to(:cancel, [@event, participant], method: :delete) %>
+      <%= participant.name %> <%= link_to(:cancel, [event, participant], method: :delete) %>
     </li>
   <% end %>
 </ul>
 
-<%= form_with(model: [@event, @participant], local: true) do |form| %>
+<%= form_with(model: [event, participant], local: true) do |form| %>
   <p>
     <%= form.label :name %>
     <%= form.text_field :name, id: :participant_name %>

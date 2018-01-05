@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
+  expose :event
+
   # GET /
   def index
-    @event = Event.new
   end
 end

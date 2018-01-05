@@ -1,31 +1,25 @@
 class ParticipantsController < ApplicationController
-  before_action :set_event
-  before_action :set_participant, except: [:create]
+  expose :event, find_by: :slug, id: :event_slug
+  expose :participants, from: :event
 
-  # POST /events/1/participant
+  # POST /events/one/participant
   def create
-    if @event.participants.create(participant_params)
-      redirect_to @event, notice: 'Participation registered'
+    if participants.create(participant_params)
+      redirect_to event, notice: 'Participation registered'
     else
+      byebug
       render 'events/show'
     end
   end
 
+  # DELETE /events/one/participant/1
   def destroy
-    @participant.destroy
-    redirect_to @event, notice: 'Participation canceled'
+    participant.destroy
+    redirect_to event, notice: 'Participation canceled'
   end
 
   private
-    def set_event
-      @event = Event.find_by_slug!(params[:event_slug])
-    end
-
-    def set_participant
-      @participant = @event.participants.find(params[:id])
-    end
-
     def participant_params
-      params.require(:participant).permit(:name)
+      params.require(:participant).permit(:event_id, :name)
     end
 end
