@@ -10,6 +10,10 @@
   <%= @event.body %>
 </p>
 
+<p>
+  <%= link_to :edit, edit_event_path(@event) %>
+</p>
+
 <ul>
   <% @event.participants.each do |participant| %>
     <li>

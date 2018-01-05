@@ -17,4 +17,15 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     get event_url(@event)
     assert_response :success
   end
+
+  test "should get edit" do
+    get edit_event_url(@event)
+    assert_response :success
+  end
+
+  test "should update event" do
+    patch event_url(@event), params: { event: { slug: 'String', title: 'String', body: 'Text' } }
+    @event = Event.find_by_slug!('String')
+    assert_redirected_to event_url(@event)
+  end
 end

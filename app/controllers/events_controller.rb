@@ -15,7 +15,26 @@ class EventsController < ApplicationController
     end
   end
 
+  # GET /events/1/edit
+  def edit
+    @event = find_event
+  end
+
+  # GET /events/1/edit
+  def update
+    @event = find_event
+    if @event.update(event_params)
+      redirect_to @event, notice: "Event was successfully updated"
+    else
+      render :edit
+    end
+  end
+
   private
+    def find_event
+      Event.find_by_slug!(params[:slug])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:slug, :title, :body)
