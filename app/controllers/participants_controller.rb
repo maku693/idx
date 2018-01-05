@@ -1,6 +1,7 @@
 class ParticipantsController < ApplicationController
   expose :event, find_by: :slug, id: :event_slug
   expose :participants, from: :event
+  expose :participant
 
   # POST /events/one/participant
   def create

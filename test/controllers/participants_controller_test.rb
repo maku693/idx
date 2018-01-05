@@ -10,4 +10,15 @@ class ParticipantsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to event_url(event)
   end
+
+  test "should destroy participant" do
+    event = events(:one)
+    participant = event.participants.last
+
+    assert_difference 'Participant.count', -1 do
+      delete event_participant_path(event, participant)
+    end
+
+    assert_redirected_to event_url(event)
+  end
 end
