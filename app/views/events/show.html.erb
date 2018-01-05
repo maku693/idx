@@ -13,9 +13,7 @@
 <ul>
   <% @event.participants.each do |participant| %>
     <li>
-      <p>
-        <%= participant.name %>
-      </p>
+      <%= participant.name %> <%= link_to(:cancel, [@event, participant], method: :delete) %>
     </li>
   <% end %>
 </ul>
