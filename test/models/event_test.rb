@@ -8,7 +8,7 @@ class EventTest < ActiveSupport::TestCase
 
   test "should not save the event without slug" do
     event = Event.new(body: 'Text', title: 'String')
-    assert_not event.save, 'Failed to save the event'
+    assert_not event.save, 'Saved the event without the slug'
   end
 
   test "should not save the event without title" do
