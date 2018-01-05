@@ -11,6 +11,12 @@ class EventTest < ActiveSupport::TestCase
     assert_not event.save, 'Saved the event without the slug'
   end
 
+  test "should not save the event with duplicate slug" do
+    Event.new(body: 'Text', title: 'String').save
+    event = Event.new(body: 'Text', title: 'String')
+    assert_not event.save, 'Saved the event with duplicate slug'
+  end
+
   test "should not save the event without title" do
     event = Event.new(slug: 'String', body: 'Text')
     assert_not event.save, 'Saved the event without the title'
