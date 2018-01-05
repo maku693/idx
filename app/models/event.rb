@@ -1,9 +1,9 @@
 class Event < ApplicationRecord
   has_many :participants, dependent: :destroy
 
-  validates_presence_of :slug
-  validates_presence_of :title
-  validates_presence_of :body
+  validates :slug, presence: true, uniqueness: true
+  validates :title, presence: true
+  validates :body, presence: true
 
   def to_key
     [slug]
