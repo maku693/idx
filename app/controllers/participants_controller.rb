@@ -8,7 +8,6 @@ class ParticipantsController < ApplicationController
     if participants.create(participant_params)
       redirect_to event, notice: 'Participation registered'
     else
-      byebug
       render 'events/show'
     end
   end
