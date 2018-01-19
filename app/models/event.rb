@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  attribute :slug, :string, default: -> { SecureRandom.base58(8) }
+
   has_many :participants, dependent: :destroy
 
   validates :slug, presence: true, uniqueness: true
