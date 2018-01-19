@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     if event.save
       redirect_to event, notice: "Event was successfully created"
     else
-      render :new
+      render 'welcome/index'
     end
   end
 
