@@ -14,3 +14,11 @@
  *= require_self
  *= require bulma/bulma
  */
+
+.wordwrap {
+  display: inline-block;
+}
+
+.enable-kerning {
+  font-feature-settings: "palt";
+}
