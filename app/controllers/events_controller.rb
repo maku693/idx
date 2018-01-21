@@ -3,10 +3,6 @@ class EventsController < ApplicationController
   expose :event_with_participants, -> { Event.includes(:participants).find_by_slug!(params[:slug]) }
   expose :participant
 
-  # GET /events/one
-  def show
-  end
-
   # POST /events
   def create
     if event.save
@@ -14,10 +10,6 @@ class EventsController < ApplicationController
     else
       render 'welcome/index'
     end
-  end
-
-  # GET /events/one/edit
-  def edit
   end
 
   # GET /events/one/edit
