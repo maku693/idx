@@ -1,0 +1,7 @@
+<% content_for :content do %>
+  <% if notice.present? %>
+      <p><%= notice %></p>
+  <% end %>
+  <%= yield %>
+<% end %>
+<%= render template: 'layouts/application' %>

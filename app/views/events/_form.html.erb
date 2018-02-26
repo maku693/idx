@@ -1,10 +1,8 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <div class="field">
-    <div class="control">
-      <%= form.text_field :title, id: :event_title, class: 'input', placeholder: Event.human_attribute_name(:title), required: true, aria: { label: Event.human_attribute_name(:title) } %>
-    </div>
+  <div>
+    <%= form.text_field :title, id: :event_title, placeholder: Event.human_attribute_name(:title), required: true, aria: { label: Event.human_attribute_name(:title) } %>
     <% if event.errors.full_messages_for(:title).any? %>
-      <p class="help is-danger">
+      <p>
         <% event.errors.full_messages_for(:title).each do |message| %>
           <%= message %>
         <% end %>
@@ -12,10 +10,10 @@
     <% end %>
   </div>
 
-  <div class="field">
-    <%= form.text_area :body, id: :event_body, class: 'textarea', placeholder: Event.human_attribute_name(:body), required: true, aria: { label: Event.human_attribute_name(:body) }%>
+  <div>
+    <%= form.text_area :body, id: :event_body, placeholder: Event.human_attribute_name(:body), required: true, aria: { label: Event.human_attribute_name(:body) }%>
     <% if event.errors.full_messages_for(:body).any? %>
-      <p class="help is-danger">
+      <p>
         <% event.errors.full_messages_for(:body).each do |message| %>
           <%= message %>
         <% end %>
@@ -23,7 +21,7 @@
     <% end %>
   </div>
 
-  <div class="field">
-    <%= form.submit class: 'button is-primary' %>
+  <div>
+    <%= form.submit %>
   </div>
 <% end %>

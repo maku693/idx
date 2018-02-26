@@ -1,13 +1,7 @@
-<section class="hero is-primary is-medium">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title is-spaced has-text-centered enable-kerning"><%= t('.tagline') %></h1>
-      <p class="subtitle has-text-centered enable-kerning">
-        <% t('.descriptions').each do |description| %><span class="wordwrap"><%= description %></span><% end %>
-      </p>
-      <p class="has-text-centered">
-        <%= link_to(t('.start'), new_event_path, class: 'button is-primary is-inverted is-outlined is-medium') %>
-      </p>
-    </div>
-  </div>
+<section role="banner">
+  <h1><%= t('.tagline') %></h1>
+  <p>
+    <% t('.descriptions').each do |description| %><%= tag.span(description, class: 'wordwrap') %><% end %>
+  </p>
+  <section><%= link_to(t('.start'), new_event_path) %></section>
 </section>
