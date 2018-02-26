@@ -1,33 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%= render 'events/notice' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= event.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= event.body %>
-</p>
-
-<p>
-  <%= link_to :edit, edit_event_path(event) %>
-</p>
+<h1><%= event.title %></h1>
+<div><%= simple_format event.body %></div>
+<p><%= link_to :edit, edit_event_path(event) %></p>
 
 <ul>
   <% event.participants.each do |participant| %>
-    <li>
-      <%= participant.name %> <%= link_to(:cancel, [event, participant], method: :delete) %>
-    </li>
+    <li><%= participant.name %> <%= link_to(:cancel, [event, participant], method: :delete, aria: { role: :button }) %></li>
   <% end %>
 </ul>
 
 <%= form_with(model: [event, participant], local: true) do |form| %>
-  <p>
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :participant_name %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <%= form.label :name %><%= form.text_field :name, id: :participant_name, required: true %><%= form.submit %>
 <% end %>

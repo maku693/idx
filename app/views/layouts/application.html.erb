@@ -12,10 +12,12 @@
 
   <body>
     <nav>
-      <%= link_to root_path do %>
-        <b>☝Konoyubi</b>
-      <% end %>
-      <%= link_to(t('events.new.title'), new_event_path) %>
+      <div class="container">
+        <ul>
+          <li><%= link_to(tag.b('☝Konoyubi'), root_path)%></li>
+          <li><%= link_to(t('events.new.title'), new_event_path) %></li>
+        </ul>
+      </div>
     </nav>
     <%= yield %>
   </body>

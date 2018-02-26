@@ -1,27 +1,25 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <div>
+  <p>
     <%= form.text_field :title, id: :event_title, placeholder: Event.human_attribute_name(:title), required: true, aria: { label: Event.human_attribute_name(:title) } %>
     <% if event.errors.full_messages_for(:title).any? %>
-      <p>
+      <ul>
         <% event.errors.full_messages_for(:title).each do |message| %>
-          <%= message %>
+          <li><%= message %></li>
         <% end %>
-      </p>
+      </ul>
     <% end %>
-  </div>
+  </p>
 
-  <div>
+  <p>
     <%= form.text_area :body, id: :event_body, placeholder: Event.human_attribute_name(:body), required: true, aria: { label: Event.human_attribute_name(:body) }%>
     <% if event.errors.full_messages_for(:body).any? %>
-      <p>
+      <ul>
         <% event.errors.full_messages_for(:body).each do |message| %>
-          <%= message %>
+          <li><%= message %></li>
         <% end %>
-      </p>
+      </ul>
     <% end %>
-  </div>
+  </p>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <p><%= form.submit %></p>
 <% end %>
