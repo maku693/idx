@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      participant: 参加者
+    attributes:
+      participant:
+        name: 名前
