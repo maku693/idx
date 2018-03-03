@@ -11,14 +11,6 @@
   </head>
 
   <body>
-    <nav>
-      <div class="container">
-        <ul>
-          <li><%= link_to(tag.b('☝Konoyubi'), root_path)%></li>
-          <li><%= link_to(t('events.new.title'), new_event_path) %></li>
-        </ul>
-      </div>
-    </nav>
     <%= yield %>
   </body>
 </html>

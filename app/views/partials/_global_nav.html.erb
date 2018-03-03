@@ -1,0 +1,10 @@
+<%= tag.div(class: global_navigation_class(local_assigns[:fill])) do %>
+  <div class="container">
+    <nav class="global-navigation__contents">
+      <ul class="global-navigation__items">
+        <li class="global-navigation__item"><%= link_to(tag.b('☝Konoyubi'), root_path, class: 'global-navigation__title-link')%></li>
+        <li class="global-navigation__item"><%= link_to(t('events.new.title'), new_event_path, class: 'button button--outline') %></li>
+      </ul>
+    </nav>
+  </div>
+<% end %>

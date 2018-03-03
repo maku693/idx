@@ -1,0 +1,20 @@
+<%= render 'partials/global_nav' %>
+<header role="banner" class="banner">
+  <div class="container">
+    <h1 class="banner__heading">気軽にあつまろう。</h1>
+    <p class="banner__body"><span class="wordwrap">ログイン不要、</span><span class="wordwrap">無料でイベントを企画、</span><span class="wordwrap">管理できます。</span></p>
+  </div>
+</header>
+<div class="container">
+  <section class="section">
+    <h2>イベントを企画しよう。</h2>
+    <p>Konoyubiでは、飲み会や社内勉強会などのイベントの告知や参加者管理ができます。</p>
+  </section>
+  <section class="section">
+    <h2>ログインは不要です。</h2>
+    <p>Konoyubiなら、誰でもイベントを作成したり、イベントに参加したりできます。面倒なアカウント作成やログインは必要ありません。</p>
+  </section>
+  <section class="section">
+    <p><%= link_to(t('events.new.title'), new_event_path, class: 'button button--fill') %></p>
+  </section>
+</div>

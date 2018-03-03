@@ -1,8 +1,0 @@
-ja:
-  welcome:
-    index:
-      tagline: '気軽にあつまろう。'
-      descriptions:
-        - 'ログイン不要で'
-        - 'イベントを作成、管理。'
-      start: 'はじめる'

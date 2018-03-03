@@ -6,4 +6,10 @@ module ApplicationHelper
   def page_title(title = nil)
     title.nil? ? content_for(:title) : content_for(:title, title)
   end
+
+  def global_navigation_class(fill)
+    css_class = 'global-navigation'
+    css_class << ' global-navigation--fill'
+    return css_class
+  end
 end
