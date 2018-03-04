@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "Hello world"
+  global_footer:
+    contact_developer: "お問い合わせ"

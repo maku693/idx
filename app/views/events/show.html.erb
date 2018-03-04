@@ -13,7 +13,7 @@
               <p class="page-header__action"><%= link_to t('.edit'), edit_event_path(event) %></p>
             </div>
             <p class="page-header__supplement">
-              <small><%= event.updated_at %></small>
+              <small><%= Event.human_attribute_name(:updated_at) %>: <%= l(event.updated_at) %></small>
             </p>
           </header>
           <%= simple_format event.body %>
@@ -42,6 +42,9 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="large-screen-only">
+  <%= render 'partials/global_footer' %>
 </div>
 <div class="small-screen-only">
   <div class="bottom-bar-spacer"></div>

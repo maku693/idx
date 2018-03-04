@@ -223,6 +223,25 @@ textarea {
   text-decoration: none;
 }
 
+.global-footer {
+  font-size: 12px;
+  text-align: center;
+  margin: 64px 0;
+}
+
+.global-footer__items {
+  margin: 0;
+  padding: 0;
+}
+
+.global-footer__item {
+  list-style-type: none;
+}
+
+.global-footer__link {
+  color: #c0c0c0;
+}
+
 .bottom-bar-spacer {
   height: 60px;
 }
