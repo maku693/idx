@@ -64,7 +64,7 @@ textarea {
   font-size: 16px;
   line-height: 1.5;
   min-width: 0;
-  padding: 3px 4px;
+  padding: 3px 8px;
 }
 
 input[type="text"]:focus,
