@@ -1,0 +1,5 @@
+<%= form_with(model: [event, participant], local: true, class: 'participant-form') do |form| %>
+  <%= form.label :name, class: 'participant-form__name-label' %>:
+  <%= form.text_field :name, id: :participant_name, required: true, class: 'participant-form__name-field' %>
+  <%= form.submit t('.participate'), class: 'participant-form__submit button button--fill' %>
+<% end %>

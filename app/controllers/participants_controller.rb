@@ -6,7 +6,7 @@ class ParticipantsController < ApplicationController
   # POST /events/one/participant
   def create
     if participants.create(participant_params)
-      redirect_to event, notice: 'Participation registered'
+      redirect_to event, notice: I18n.t('participants.create.notice')
     else
       render 'events/show'
     end
@@ -15,7 +15,7 @@ class ParticipantsController < ApplicationController
   # DELETE /events/one/participant/1
   def destroy
     participant.destroy
-    redirect_to event, notice: 'Participation canceled'
+    redirect_to event, notice: I18n.t('participants.destroy.notice')
   end
 
   private

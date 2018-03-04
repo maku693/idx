@@ -2,3 +2,9 @@ ja:
   events:
     new:
       title: '新規イベントを作成'
+    show:
+      edit: '編集'
+      participate: 'イベントに参加'
+      cancel_participation: '参加登録をキャンセル'
+    participant_form:
+      participate: '参加登録'
