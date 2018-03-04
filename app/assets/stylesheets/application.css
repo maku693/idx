@@ -113,6 +113,10 @@ input[type="text"] {
   border: 1px solid #fa8314;
 }
 
+.input {
+  width: 100%;
+}
+
 .notice {
   background-color: #eff6ff;
   border: 1px solid #c8d9f2;
@@ -143,6 +147,7 @@ input[type="text"] {
     margin-right: 32px;
   }
   .main-sidebar__sidebar {
+    flex-shrink: 0;
     width: 280px;
   }
 }
@@ -270,7 +275,6 @@ input[type="text"] {
 }
 
 .participant-form__name-field {
-  flex-grow: 1;
   flex-shrink: 1;
   margin: 0 8px;
 }
