@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # POST /events
   def create
     if event.save
-      redirect_to event, notice: "Event was successfully created"
+      redirect_to event, notice: I18n.t('events.create.notice')
     else
       render :new
     end
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   # GET /events/one/edit
   def update
     if event.update(event_params)
-      redirect_to event, notice: "Event was successfully updated"
+      redirect_to event, notice: I18n.t('events.update.notice')
     else
       render :edit
     end

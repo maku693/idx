@@ -54,15 +54,27 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
+  box-sizing: border-box;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.5;
   min-width: 0;
-  padding: 6px 4px;
+  padding: 3px 4px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #fa8314;
+}
+
+textarea {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /*
@@ -88,6 +100,7 @@ input[type="text"] {
 .button {
   border-radius: 4px;
   box-sizing: border-box;
+  cursor: pointer;
   color: #ffffff;
   display: inline-block;
   font-size: 12px;
@@ -155,6 +168,26 @@ input[type="text"] {
 /*
  * Modules
  */
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group__label {
+  margin: 0 0 4px 0;
+}
+
+.input-group__field {
+  margin: 0 0 4px 0;
+}
+
+.input-group-errors {
+  color: #ff452f;
+  list-style-position: inside;
+  font-size: 12px;
+  margin: 0;
+  padding-left: 1em;
+}
 
 .global-navigation {
   margin-bottom: 16px;

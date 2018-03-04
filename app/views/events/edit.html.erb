@@ -1,4 +1,17 @@
 <% page_title t('.title') %>
-<%= render 'events/notice' %>
-<h1><%= page_title %></h1>
-<%= render 'events/form', event: event %>
+
+<%= render 'partials/global_nav', fill: true %>
+<%= render 'partials/notice' %>
+<div class="container">
+  <main>
+    <section>
+      <header class="page-header">
+        <div class="page-header__heading">
+          <h1 class="page-header__title"><%= page_title %></h1>
+          <p class="page-header__action"><%= link_to t('.cancel'), event_path(event) %></p>
+        </div>
+      </header>
+      <%= render 'events/form', event: event %>
+    </section>
+  </main>
+</div>

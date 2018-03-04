@@ -8,3 +8,10 @@ ja:
       cancel_participation: '参加登録をキャンセル'
     participant_form:
       participate: '参加登録'
+    edit:
+      title: 'イベントを編集中'
+      cancel: 'キャンセル'
+    create:
+      notice: 'イベントが作成されました'
+    update:
+      notice: 'イベントが更新されました'

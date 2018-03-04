@@ -1,25 +1,25 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <p>
-    <%= form.text_field :title, id: :event_title, placeholder: Event.human_attribute_name(:title), required: true, aria: { label: Event.human_attribute_name(:title) } %>
+  <div class="input-group">
+    <p class="input-group__label"><%= form.label :title %>:</p>
+    <p class="input-group__field"><%= form.text_field :title, id: 'event_title', class: 'input', required: true %></p>
     <% if event.errors.full_messages_for(:title).any? %>
-      <ul>
+      <ul class="input-group-errors">
         <% event.errors.full_messages_for(:title).each do |message| %>
-          <li><%= message %></li>
+          <li class="input-group-error"><%= message %></li>
         <% end %>
       </ul>
     <% end %>
-  </p>
-
-  <p>
-    <%= form.text_area :body, id: :event_body, placeholder: Event.human_attribute_name(:body), required: true, aria: { label: Event.human_attribute_name(:body) }%>
+  </div>
+  <div class="input-group">
+    <p class="input-group__label"><%= form.label :body %>:</p>
+    <p class="input-group__field"><%= form.text_area :body, id: 'event_body', class: 'input', required: true, rows: 12 %></p>
     <% if event.errors.full_messages_for(:body).any? %>
-      <ul>
+      <ul class="input-group-errors">
         <% event.errors.full_messages_for(:body).each do |message| %>
-          <li><%= message %></li>
+          <li class="input-group-error"><%= message %></li>
         <% end %>
       </ul>
     <% end %>
-  </p>
-
-  <p><%= form.submit %></p>
+  </div>
+  <p><%= form.submit class: 'button button--fill' %></p>
 <% end %>
