@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use expose helper on controllers
 gem 'decent_exposure', '~>3.0.0'
+# reCAPTCHA support
+gem "recaptcha", '~>4.6.0', require: "recaptcha/rails"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
