@@ -30,6 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  helpers:
+    submit:
+      create: "%{model}を作成"
+      update: "%{model}を更新"
   recaptcha:
     errors:
       verification_failed: 'reCAPTCHAの検証に失敗しました'
