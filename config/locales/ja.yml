@@ -30,5 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  recaptcha:
+    errors:
+      verification_failed: 'reCAPTCHAの検証に失敗しました'
   global_footer:
     contact_developer: "お問い合わせ"

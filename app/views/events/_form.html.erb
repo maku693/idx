@@ -21,5 +21,17 @@
       </ul>
     <% end %>
   </div>
+  <% if event.new_record? %>
+    <div class="input-group">
+      <%= recaptcha_tags %>
+      <% if event.errors.messages[:recaptcha].any? %>
+        <ul class="input-group-errors">
+          <% event.errors.messages[:recaptcha].each do |message| %>
+            <li class="input-group-error"><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
   <p><%= form.submit class: 'button button--fill' %></p>
 <% end %>

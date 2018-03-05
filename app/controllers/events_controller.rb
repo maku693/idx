@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    if event.save
+    if verify_recaptcha(model: event, attribute: :recaptcha) && event.save
       redirect_to event, notice: I18n.t('events.create.notice')
     else
       render :new
