@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ParticipantTest < ActiveSupport::TestCase
   test "should save with full information" do
-    participant = Participant.new(event: events(:one))
+    participant = Participant.new(event: events(:one), name: 'Raiden')
     assert participant.save, 'Failed to save the participant'
   end
 
