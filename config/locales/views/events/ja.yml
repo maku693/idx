@@ -5,7 +5,7 @@ ja:
     show:
       edit: '編集'
       participate: 'イベントに参加'
-      cancel_participation: '参加登録をキャンセル'
+      cancel_participation: '参加登録を取り消す'
     participant_form:
       participate: '参加登録'
     edit:

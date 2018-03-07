@@ -3,4 +3,4 @@ ja:
     create:
       notice: '参加登録が完了しました'
     destroy:
-      notice: '参加登録をキャンセルしました'
+      notice: '参加登録を取り消しました'
