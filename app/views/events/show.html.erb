@@ -16,7 +16,7 @@
               <small><%= Event.human_attribute_name(:updated_at) %>: <%= l(event.updated_at) %></small>
             </p>
           </header>
-          <%= simple_format event.body %>
+          <%== render_markdown event.body %>
         </section>
       </main>
     </div>

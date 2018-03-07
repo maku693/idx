@@ -1,4 +1,10 @@
+require 'commonmarker'
+
 module ApplicationHelper
+  def render_markdown(markdown)
+    CommonMarker.render_html(markdown, :SAFE)
+  end
+
   def title_tag(application_name)
     tag.title([content_for(:title), application_name].compact.join(' - '))
   end
