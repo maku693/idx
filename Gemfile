@@ -35,6 +35,8 @@ gem "recaptcha", '~>4.6.0', require: "recaptcha/rails"
 # gem 'bcrypt', '~> 3.1.7'
 # Use localized messages
 gem "rails-i18n", "~> 5.0.0"
+# Markdown rendering
+gem 'commonmarker', "~> 0.17.8"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
