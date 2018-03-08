@@ -1,0 +1,16 @@
+language: ruby
+
+rvm:
+  - 2.5.0
+
+services:
+  - postgresql
+
+env:
+  - RAILS_ENV=test DATABASE_HOST=localhost DATABASE_PORT=5432 DATABASE_USER=postgres DATABASE_PASSWORD=
+
+before_script:
+  - bin/rails db:setup
+
+script:
+  - bin/rails test
