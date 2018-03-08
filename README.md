@@ -1,24 +1,45 @@
-# README
+# Konoyubi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/maku693/konoyubi.svg?branch=master)](https://travis-ci.org/maku693/konoyubi)
 
-Things you may want to cover:
+Konoyubi is a event management web application. Users can create events, and
+anyone who knows the event's URL can participate to the event, without creating
+an account or signing-in.
 
-* Ruby version
+## System Requirements
 
-* System dependencies
+- Ruby 2.5.0
+- NodeJS 8+
+- Yarn
+- PostgreSQL
 
-* Configuration
+## Development Environment
 
-* Database creation
+For local development, please use docker-compose.  
+`docker` directory contains `docker-compose.yml` and Dockerfile for the
+application.
 
-* Database initialization
+### Use development console
 
-* How to run the test suite
+To run rails commands, rake, yarn, or other command-line tools, attach to a
+docker container:
+```
+$ cd docker
+$ docker-compose run --rm rails sh
+/usr/src/app # bin/rails db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Launch development server
 
-* Deployment instructions
+To launch the application, run:
+```
+$ cd docker
+$ docker-compose up -d
+```
 
-* ...
+Then you can visit the application at `http://localhost:3000`.  
+Demo event for testing is available on `http://localhost:3000/demo-event`.
+
+## Deployment
+
+TBD
