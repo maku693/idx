@@ -9,7 +9,7 @@ services:
   - postgresql
 
 env:
-  - RAILS_ENV=test DATABASE_HOST=localhost DATABASE_PORT=5432 DATABASE_USER=postgres DATABASE_PASSWORD=
+  - RAILS_ENV=test DATABASE_URL=postgres://postgres@localhost:5432/postgres
 
 before_script:
   - bin/rails db:setup
